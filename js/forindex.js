@@ -116,16 +116,34 @@ function xianshi(){
             shangchuan();
         }
     }else {
-        var ul = document.getElementById("neirong");
-        var id11 = "li" + ts;
-        //ul.innerHTML+='<li>'+hqnr+'</li>';
-        var msg = "<li " + "id=" + id11 + ">" + hqnr + "</li>";
-        $("#neirong").append(msg);
-        var dql = document.getElementById(id11);
-        //alert(dql.style.top);
-        dql.scrollIntoView();
-        ts = ts + 1;
-        fsneirong.value = "";
+
+        if(hqnr=="马上给你看"){
+            var ul = document.getElementById("neirong");
+            var id11 = "li" + ts;
+            //ul.innerHTML+='<li>'+hqnr+'</li>';
+            var msg = "<li " + "id=" + id11 + ">" + "点击图片关闭" + "</li>";
+            $("#neirong").append(msg);
+            var dql = document.getElementById(id11);
+            //alert(dql.style.top);
+            dql.scrollIntoView();
+            ts = ts + 1;
+            fsneirong.value = "";
+            var tp=document.getElementById("zp");
+            tp.style.visibility="visible";
+            alert("点击图片关闭");
+
+        }else {
+            var ul = document.getElementById("neirong");
+            var id11 = "li" + ts;
+            //ul.innerHTML+='<li>'+hqnr+'</li>';
+            var msg = "<li " + "id=" + id11 + ">" + hqnr + "</li>";
+            $("#neirong").append(msg);
+            var dql = document.getElementById(id11);
+            //alert(dql.style.top);
+            dql.scrollIntoView();
+            ts = ts + 1;
+            fsneirong.value = "";
+        }
     }
 }
 
@@ -162,4 +180,10 @@ function shangchuan(){
             //alert('添加数据失败，返回错误信息：' + error.description);
         }
     });
+}
+
+function yc(){
+    var tp=document.getElementById("zp");
+    tp.style.visibility="hidden";
+
 }
